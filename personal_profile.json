@@ -1,0 +1,263 @@
+{
+  "meta": {
+    "description": "Comprehensive personal profile capturing attributes beyond resume data",
+    "lastUpdated": "2026-02-01",
+    "source": "Inferred from existing documents (profile.json, cover letters, strategy docs)",
+    "note": "Review and update with personal additions - especially weaknesses, life principles, and goals"
+  },
+
+  "superStrengths": [
+    {
+      "name": "Technical + Business Bridge",
+      "description": "Rare combination of 19 patents AND $250M+ revenue generation",
+      "evidence": "Can speak to CTOs as peer AND close business deals",
+      "quote": "My 19 patents aren't just credentials - they're proof I can engage technical executives as a peer, not just a vendor"
+    },
+    {
+      "name": "Claude Production Expertise",
+      "description": "$500K+ ARR built directly on Claude at 8090.ai",
+      "evidence": "8+ production enterprise projects with measurable ROI",
+      "quote": "I know your product, your customers, and your growth opportunities because I live them every day"
+    },
+    {
+      "name": "Full-Stack Career Journey",
+      "description": "Engineering (10y) -> Consulting (4y) -> Product (3y) -> GTM (5y)",
+      "evidence": "Can operate at any level: IC to executive",
+      "differentiator": "Founding member experience + Big Tech scale"
+    },
+    {
+      "name": "Fortune 500 Relationship Capital",
+      "description": "22 years of enterprise relationships",
+      "evidence": "300+ accounts at Google Cloud alone",
+      "differentiator": "Deep understanding of enterprise buying cycles"
+    },
+    {
+      "name": "Vibe-Coding Pioneer",
+      "description": "Invented AI-assisted development methodology",
+      "evidence": "50K+ LinkedIn views on AI/ML content",
+      "quote": "Increasingly, I am convinced Claude code is the ANSWER and all other wrappers will disappear"
+    }
+  ],
+
+  "hiddenMultipliers": [
+    {
+      "name": "Healthcare AI Credibility",
+      "description": "HIPAA/FDA compliance experience (rare in AI)",
+      "value": "Opens doors in regulated industries",
+      "evidence": "Production healthcare systems with safety guardrails, clinical validation expertise"
+    },
+    {
+      "name": "Patent Portfolio as Conversation Opener",
+      "description": "19 patents = instant credibility with any CTO",
+      "value": "Opens doors that credentials can't",
+      "evidence": "Proof of innovation, not just execution"
+    },
+    {
+      "name": "Safety-Conscious AI Practitioner",
+      "description": "Human-in-the-loop validation philosophy",
+      "value": "Authentic mission alignment for Anthropic/OpenAI",
+      "quote": "Automation without responsibility isn't progress"
+    },
+    {
+      "name": "Speed + Quality Combination",
+      "description": "Ships fast without breaking things",
+      "evidence": "60% time-to-value reduction, 85-90% automation rates"
+    },
+    {
+      "name": "Palo Alto Location",
+      "description": "30 min from  SF office",
+      "value": "In Silicon Valley AI epicenter, network access to ecosystem"
+    },
+    {
+      "name": "Bias for Action",
+      "description": "10x strength is bias for action",
+      "evidence": "Founding member startup mentality, high agency, moves fast",
+      "selfDescribed": true
+    }
+  ],
+
+  "coreStrengths": [
+    {
+      "strength": "Enterprise Transformation",
+      "evidence": "Scaled Pivotal $0 to $250M ARR in 3 years"
+    },
+    {
+      "strength": "Team Building",
+      "evidence": "0 to 10 at Google, 0 to 50+ at Pivotal"
+    },
+    {
+      "strength": "Technical Evangelism",
+      "evidence": "SpringOne, JavaOne, IBM Impact speaker"
+    },
+    {
+      "strength": "Customer Success",
+      "evidence": "95%+ retention, 40% expansion, 95+ NPS"
+    },
+    {
+      "strength": "Revenue Generation",
+      "evidence": "$250M+ at Google Cloud, >300 opportunities"
+    },
+    {
+      "strength": "Deep Technical Expertise",
+      "evidence": "Distributed systems, performance optimization, 19 patents"
+    },
+    {
+      "strength": "Thought Leadership",
+      "evidence": "Book author (Pragmatic Microservices), 50+ blog posts, 50K+ LinkedIn views"
+    },
+    {
+      "strength": "Cross-Functional Collaboration",
+      "evidence": "Works with Sales, Product, Engineering seamlessly"
+    },
+    {
+      "strength": "Consultative Engagement",
+      "evidence": "CTO/VP Engineering trusted advisor relationships"
+    },
+    {
+      "strength": "Fast Context Switching",
+      "evidence": "Healthcare one week, insurance the next"
+    }
+  ],
+
+
+  "lifePrinciples": [
+    {
+      "principle": "Automation without responsibility isn't progress",
+      "meaning": "Safety-first AI philosophy, human oversight matters, ethics over efficiency",
+      "source": "Cover letter values statement"
+    },
+    {
+      "principle": "Action Over Theory",
+      "meaning": "Bias for action as core strength, built production systems not demos",
+      "quote": "Not theoretically, but from deploying production systems at scale"
+    },
+    {
+      "principle": "Show Don't Tell",
+      "meaning": "Let work speak for mission alignment, authentic demonstrations over performative statements",
+      "application": "Track record over promises"
+    },
+    {
+      "principle": "Technical Credibility Matters",
+      "meaning": "Patents as proof of peer-level expertise, can't advise what you can't do",
+      "application": "Depth enables authentic relationships"
+    },
+    {
+      "principle": "Customer Success = Business Success",
+      "meaning": "Focus on customer outcomes, measurable ROI not vanity metrics",
+      "application": "Long-term relationships over quick wins"
+    },
+    {
+      "principle": "Scale Through Frameworks",
+      "meaning": "Reusable methodologies, enable others don't just do",
+      "quote": "Build systems that scale, not one-off wins"
+    }
+  ],
+
+  "priorities": {
+    "companies": [
+      {"rank": 1, "company": "Anthropic", "priority": "HIGHEST", "reason": "Claude experience, product-market fit, $500K+ ARR on their product"},
+      {"rank": 2, "company": "Cursor", "priority": "HIGH", "reason": "AI developer tools, startup environment"},
+      {"rank": 3, "company": "xAI", "priority": "HIGH", "reason": "Technical depth, startup, multi-model expertise"},
+      {"rank": 4, "company": "Meta", "priority": "MEDIUM", "reason": "Scale, GenAI"},
+      {"rank": 5, "company": "OpenAI", "priority": "ACTIVE", "reason": "Enterprise AI, mission alignment"}
+    ],
+    "roleTypes": [
+      {"rank": 1, "role": "AI Product Leadership"},
+      {"rank": 2, "role": "Solutions Architecture"},
+      {"rank": 3, "role": "GTM/Partnerships"},
+      {"rank": 4, "role": "Customer Success/TAM"}
+    ],
+    "tradeoffs": [
+      "Will do IC work at startup (8090.ai) for equity/learning",
+      "Values mission alignment over pure compensation",
+      "Prefers AI-native companies over traditional enterprise"
+    ]
+  },
+
+  "goals": {
+    "shortTerm": {
+      "timeframe": "1-2 years",
+      "goals": [
+        "Land role at top AI company (Anthropic preferred)",
+        "Continue building 8090.ai customer base",
+        "Expand thought leadership (vibe-coding, Software Factory)"
+      ]
+    },
+    "longTerm": {
+      "timeframe": "5+ years",
+      "goals": [
+        "Executive role in AI product/GTM",
+        "Shape enterprise AI adoption at scale",
+        "Build category-defining AI products"
+      ]
+    },
+    "careerMission": "Bridge the gap between AI innovation and enterprise adoption - be the person who makes AI work for Fortune 500"
+  },
+
+  "workStyle": [
+    {"trait": "High Agency", "description": "Founding member, self-directed"},
+    {"trait": "Fast-Paced", "description": "Fast context switching capability"},
+    {"trait": "Hands-On", "description": "Still writes code, builds systems"},
+    {"trait": "Relationship-Driven", "description": "Long-term customer partnerships"},
+    {"trait": "Data-Oriented", "description": "Metrics in every description"},
+    {"trait": "Teacher/Enabler", "description": "Labs, workshops, 5K+ developers trained"},
+    {"trait": "Collaborative", "description": "Cross-functional work emphasized"},
+    {"trait": "Mission-Motivated", "description": "Values alignment matters"}
+  ],
+
+  "energizers": [
+    "Building production AI systems",
+    "Customer success stories with measurable ROI",
+    "Teaching and enabling others",
+    "Technical challenges at scale",
+    "Startup speed and autonomy",
+    "Thought leadership recognition"
+  ],
+
+  "drainers": [
+    "Bureaucracy without outcomes",
+    "Theoretical work without production impact",
+    "Slow-moving organizations",
+    "Projects without measurable results"
+  ],
+
+  "dealBreakers": [
+    "Companies without clear AI mission",
+    "Roles that are pure sales without technical depth",
+    "Organizations resistant to innovation",
+    "Lack of customer impact visibility"
+  ],
+
+  "selfDescribedIdentity": {
+    "whatsappIntro": "I am a software engineer by training who has about 18 years of experience in 1. engineering 2. technical consulting 3. GTM and 4. Product Management. My areas of expertise are application modernization, Cloud and Applied AI. Recently I was a founding member of my startup 8090.ai where I lead Customer Projects.",
+    "twitterIntro": "I am an engineer, a founding member of 8090.ai, and a huge fan of Claude code. We are building a software factory using claude code. Increasingly, I am convinced Claude code is the ANSWER and all other wrappers will disappear.",
+    "linkedinHeadline": "AI Solutions Leader | Building Enterprise Software Factories"
+  },
+
+  "keyQuotes": [
+    {
+      "quote": "Automation without responsibility isn't progress",
+      "context": "AI safety philosophy"
+    },
+    {
+      "quote": "I know your product, your customers, and your growth opportunities because I live them every day",
+      "context": "Anthropic pitch"
+    },
+    {
+      "quote": "My 19 patents aren't just credentials - they're proof I can engage technical executives as a peer, not just a vendor",
+      "context": "Technical credibility positioning"
+    },
+    {
+      "quote": "Not theoretically, but from deploying production systems at scale",
+      "context": "Action over theory principle"
+    },
+    {
+      "quote": "Build systems that scale, not one-off wins",
+      "context": "Framework thinking"
+    },
+    {
+      "quote": "Increasingly, I am convinced Claude code is the ANSWER and all other wrappers will disappear",
+      "context": "Claude advocacy"
+    }
+  ]
+}
