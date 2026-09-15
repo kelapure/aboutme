@@ -341,7 +341,7 @@ export default function HomePage() {
               Teams will schedule model strength, reasoning effort, context, retries, and review — same way earlier generations scheduled compute. Product leaders will write intent for humans and agents. Engineering managers will own agent queues and acceptance economics. Audit trails will become organizational memory you can actually query.
             </p>
             <p className="text-[var(--fg-1)] font-medium">
-              The durable companies won't be the ones generating the most code. They'll be the ones that turn institutional judgment into software without deleting the people responsible for the decision.
+              The durable companies won't be the ones generating the most code. They'll be the ones that turn institutional judgment into software — and keep a named human on the hook when the call matters.
             </p>
           </div>
         </div>
