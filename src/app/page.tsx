@@ -120,7 +120,7 @@ export default function HomePage() {
       <section className="bg-[var(--bg-dark)] text-[var(--fg-on-dark-1)] pt-32 pb-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl mx-auto">
           <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-on-dark-2)] mb-8">
-            Rohit Kelapure · Forward-deployed product engineer · Palo Alto
+            Rohit Kelapure · Cofounder & Product Manager, 8090 · Palo Alto
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-8 tracking-tight">
             Fax is still an API. COBOL still prices claims. The spreadsheet nobody admits is production still runs the company.
