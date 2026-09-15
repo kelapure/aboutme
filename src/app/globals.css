@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  /* 8090 Design System Colors */
+  
+  /* Linen / neutral ramp */
+  --color-linen-100: #F5F4F4;
+  --color-linen-200: #ECEBEB;
+  --color-linen-300: #DAD9D9;
+  --color-linen-400: #B4AFAD;
+  --color-linen-500: #8E8784;
+  --color-linen-600: #706C6A;
+  --color-linen-700: #535251;
+  --color-linen-800: #2F2B29;
+  --color-linen-900: #1D1918;
+
+  /* Rust accent */
+  --color-rust-100: #FAE6E0;
+  --color-rust-200: #E5C2B8;
+  --color-rust-300: #CC9D8F;
+  --color-rust-400: #996A5C;
+  --color-rust-500: #663F33;
+  --color-rust-600: #41231A;
+
+  /* Moss accent */
+  --color-moss-100: #E0F5F0;
+  --color-moss-200: #B8E5DB;
+  --color-moss-300: #8FCCBE;
+  --color-moss-400: #5C998B;
+  --color-moss-500: #33665A;
+  --color-moss-600: #1F3D36;
+
+  /* Rock accent */
+  --color-rock-100: #F4EFEB;
+  --color-rock-200: #E5CDB8;
+  --color-rock-300: #CCAB8F;
+  --color-rock-400: #99785C;
+  --color-rock-500: #664B33;
+  --color-rock-600: #3D2E21;
+
+  /* Status */
+  --color-status-destructive: #902305;
+  --color-status-success: #6B8E57;
+
+  /* Brand */
+  --color-brand-primary: #2C4C83;
+  --color-brand-clover: #673399;
+  --color-link: #0055D4;
+
+  /* Typography */
+  --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Border radius - 8090 is square */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+}
+
+:root {
+  /* Semantic roles */
+  --bg-page: var(--color-linen-200);
+  --bg-card: var(--color-linen-100);
+  --bg-dark: var(--color-linen-900);
+  --fg-1: var(--color-linen-900);
+  --fg-2: var(--color-linen-700);
+  --fg-3: var(--color-linen-500);
+  --fg-eyebrow: var(--color-linen-500);
+  --fg-on-dark-1: var(--color-linen-100);
+  --fg-on-dark-2: var(--color-linen-500);
+  --accent: var(--color-moss-500);
+  --border: var(--color-linen-300);
+  --border-on-dark: var(--color-linen-500);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--fg-1);
+  line-height: 1.6;
+}
+
+::selection {
+  background-color: var(--color-moss-200);
+  color: var(--color-linen-900);
+}
