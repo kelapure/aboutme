@@ -173,7 +173,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-[var(--fg-2)] text-lg leading-relaxed">
-                  Learned what happens inside a runtime when things go wrong: caching, contention, deadlocks, memory pressure, production Java at scale. Built WebSphere caching infrastructure for Fortune 100s. Set SPECjEnterprise world records. Wrote 30K+ lines that shipped.
+                  Learned what happens inside a runtime when things go wrong: caching, contention, deadlocks, memory pressure, production Java at scale. Built WebSphere caching infrastructure for Fortune 100s. Set SPECjEnterprise world records. Wrote 300K+ lines that shipped to production.
                 </p>
                 <p className="mt-4 text-[var(--fg-1)] font-medium">
                   19 patent filings, including 10 grants. Two Outstanding Technical Achievement Awards.
@@ -208,7 +208,7 @@ export default function HomePage() {
                   Learned why good technology doesn't distribute itself. Led specialist and GTM work across modern apps, databases, early Gemini. Built a team of 10 senior specialists. Managed 300+ opportunities in 2023. Hit 162% of pipeline target.
                 </p>
                 <p className="mt-4 text-[var(--fg-1)] font-medium">
-                  $250M+ revenue. Grew AI/ML business 10x.
+                  $250M+ revenue. Grew Application Transformation business 10x.
                 </p>
               </div>
             </div>
