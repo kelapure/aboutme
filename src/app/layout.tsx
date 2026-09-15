@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Rohit Kelapure — Forward-deployed product engineer',
-  description: 'I build software factories for work that cannot afford to be wrong: healthcare intake, regulated content, legacy rules, and enterprise workflows. Co-founder at 8090.',
+  description: 'Fax is still an API. COBOL still prices claims. I sit with the people who know the exception paths and turn that into product intent agents can execute. Co-founder at 8090.',
   keywords: ['Rohit Kelapure', 'AI', 'Enterprise Software', 'Healthcare AI', '8090', 'Software Factory', 'Applied AI'],
   authors: [{ name: 'Rohit Kelapure' }],
   openGraph: {

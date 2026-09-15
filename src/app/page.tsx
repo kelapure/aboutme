@@ -123,19 +123,16 @@ export default function HomePage() {
             Rohit Kelapure · Forward-deployed product engineer · Palo Alto
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-8 tracking-tight">
-            Code is no longer scarce.<br />Clear intent is.
+            Fax is still an API. COBOL still prices claims. The spreadsheet nobody admits is production still runs the company.
           </h1>
           <div className="space-y-6 text-lg md:text-xl text-[var(--fg-on-dark-2)] leading-relaxed">
             <p>
-              I build software factories for work that cannot afford to be wrong: healthcare intake, regulated content, legacy rules, and enterprise workflows whose exception paths live in people's heads.
+              I sit with the people who know the exception paths, turn that into product intent agents can execute, and keep humans on the decisions that create liability.
             </p>
             <p>
-              I am a co-founder at <a href="https://www.8090.ai/" target="_blank" rel="noopener noreferrer" className="text-[var(--fg-on-dark-1)] hover:text-[var(--color-moss-300)] transition-colors">8090</a>. I work on the customer side of the problem — from watching operators and writing product intent to architecture, agent execution, evaluation, and production.
+              Co-founder at <a href="https://www.8090.ai/" target="_blank" rel="noopener noreferrer" className="text-[var(--fg-on-dark-1)] hover:text-[var(--color-moss-300)] transition-colors">8090</a>. Since 2003: IBM runtimes → Pivotal modernization → Google Cloud GTM → applied AI in production.
             </p>
           </div>
-          <p className="mt-10 text-[var(--fg-on-dark-2)] border-l-2 border-[var(--color-moss-500)] pl-4">
-            Since 2003: distributed systems at IBM, application modernization at Pivotal, cloud GTM at Google, and now applied AI in production.
-          </p>
         </div>
       </section>
 
@@ -165,10 +162,7 @@ export default function HomePage() {
       {/* Career Arc */}
       <section id="arc" className="py-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-4xl mx-auto">
-          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">The arc</p>
-          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--fg-1)] mb-12">
-            Why this became my work
-          </h2>
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-12">The arc</p>
           
           <div className="space-y-12">
             {/* IBM */}
@@ -235,20 +229,13 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-          <p className="mt-12 text-[var(--fg-3)] text-center">
-            The career arc is evidence. The work now is the point.
-          </p>
         </div>
       </section>
 
       {/* Field Notes */}
       <section id="field-work" className="py-20 px-6 md:px-12 lg:px-24 bg-[var(--bg-card)]">
         <div className="max-w-4xl mx-auto">
-          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Selected field notes</p>
-          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--fg-1)] mb-12">
-            What the work actually looks like
-          </h2>
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-12">Field notes</p>
           
           <div className="space-y-16">
             {fieldNotes.map((note, index) => (
@@ -268,10 +255,7 @@ export default function HomePage() {
       {/* Beliefs */}
       <section id="beliefs" className="py-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-4xl mx-auto">
-          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">What production changed my mind about</p>
-          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--fg-1)] mb-12">
-            Opinions earned the hard way
-          </h2>
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-12">What production changed my mind about</p>
           
           <div className="space-y-10">
             {beliefs.map((belief) => (
@@ -358,9 +342,6 @@ export default function HomePage() {
             </p>
             <p className="text-[var(--fg-1)] font-medium">
               The durable companies will not be those that generate the most code. They will be those that turn institutional judgment into software without deleting the people responsible for the decision.
-            </p>
-            <p>
-              That is the work I want to spend the next decade doing.
             </p>
           </div>
         </div>
