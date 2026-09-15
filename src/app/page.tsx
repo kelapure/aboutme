@@ -32,43 +32,43 @@ const beliefs = [
     number: '01',
     title: 'An agent will implement ambiguity at machine speed',
     body: 'Better models make unclear requirements more expensive, not less. They produce more convincing wrong work, faster. Intent, examples, exclusions, and acceptance tests are now runtime inputs — not things you figure out later.',
-    receipt: 'Learned shipping healthcare AI where a confident wrong answer creates audit liability.',
+    receipt: 'Healthcare AI taught me this — a confident wrong answer creates audit liability.',
   },
   {
     number: '02',
     title: 'The PRD is becoming executable source code',
     body: 'A PRD is not done because a room of humans nods at it. It\'s done when it\'s precise enough for agents to decompose, build, and test — and for an independent judge to reject the result when it misses the intent.',
-    receipt: 'Learned watching agents faithfully build the wrong thing from ambiguous specs.',
+    receipt: 'Watched agents faithfully build the wrong thing from ambiguous specs. More than once.',
   },
   {
     number: '03',
     title: 'The unautomated 10% is architecture',
     body: '"Ninety percent automated" tells me nothing. What happens in the other ten percent? Who sees uncertainty? Who can override the system? What evidence do they get? What gets recorded? That\'s the architecture.',
-    receipt: 'Learned building escalation paths for document-intelligence systems.',
+    receipt: 'Built escalation paths for document-intelligence systems. The 10% is where the product lives.',
   },
   {
     number: '04',
     title: 'Every backlog now has a token budget',
     body: 'Agent labor is not free just because it\'s fast. Model choice, reasoning effort, retries, review depth, context size — these are scheduling decisions now. Cost per accepted outcome matters more than tokens burned or lines generated.',
-    receipt: 'Learned managing agent fleets at 8090 where inference cost is a P&L line.',
+    receipt: 'Managing agent fleets at 8090 where inference cost is a P&L line.',
   },
   {
     number: '05',
     title: 'A second model is cheaper than a confident mistake',
     body: 'I run adversarial review on plans, PRDs, architecture, and business-case math. Two models disagreeing is information. Two models agreeing is not validation — it might just be two models confidently wrong.',
-    receipt: 'Learned shipping regulated content where a single error triggers full re-review.',
+    receipt: 'Shipped regulated content where a single error triggers full re-review. Prevention beats rework.',
   },
   {
     number: '06',
     title: 'Problems belong before wins',
     body: 'My status updates lead with the risk. Customers can handle bad news. What they can\'t handle is discovering the team edited reality to keep a slide green.',
-    receipt: 'Learned at Google Cloud managing 300+ opportunities where surprises killed deals.',
+    receipt: 'Google Cloud, 300+ opportunities. Surprises killed more deals than bad news ever did.',
   },
   {
     number: '07',
     title: 'If nobody can trace why the code exists, speed is a bug',
     body: 'Requirements link to designs. Designs link to work orders. Work orders link to code and validation. Break that chain and agents turn every upstream misunderstanding into technical debt at machine speed.',
-    receipt: 'Learned building traceability into 8090\'s software factory.',
+    receipt: 'Built traceability into 8090\'s software factory. Without it, you\'re just generating debt faster.',
   },
 ]
 
@@ -120,7 +120,7 @@ export default function HomePage() {
       <section className="bg-[var(--bg-dark)] text-[var(--fg-on-dark-1)] pt-32 pb-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl mx-auto">
           <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-on-dark-2)] mb-8">
-            Rohit Kelapure · Cofounder & Product Manager, 8090 · Palo Alto
+            Rohit Kelapure · Cofounder. Product Manager and first FDE @ 8090 · Palo Alto
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-8 tracking-tight">
             Fax is still an API. COBOL still prices claims. The spreadsheet nobody admits is production still runs the company.
@@ -130,7 +130,7 @@ export default function HomePage() {
               I sit with the people who know the exception paths, turn that into product intent agents can execute, and keep humans on the decisions that create liability.
             </p>
             <p>
-              Co-founder at <a href="https://www.8090.ai/" target="_blank" rel="noopener noreferrer" className="text-[var(--fg-on-dark-1)] hover:text-[var(--color-moss-300)] transition-colors">8090</a>. Since 2003: IBM runtimes → Pivotal modernization → Google Cloud GTM → applied AI in production.
+              Since 2003: IBM runtimes → Pivotal modernization → Google Cloud GTM → applied AI in production.
             </p>
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-[var(--fg-2)] text-lg leading-relaxed">
-                  Learned what happens inside a runtime when things go wrong: caching, contention, deadlocks, memory pressure, production Java at scale. Built WebSphere caching infrastructure for Fortune 100s. Set SPECjEnterprise world records. Wrote 300K+ lines that shipped to production.
+                  Eleven years inside a runtime: caching, contention, deadlocks, memory pressure, production Java at scale. Built WebSphere caching infrastructure for Fortune 100s. Set SPECjEnterprise world records. Wrote 300K+ lines that shipped to production.
                 </p>
                 <p className="mt-4 text-[var(--fg-1)] font-medium">
                   19 patent filings, including 10 grants. Two Outstanding Technical Achievement Awards.
@@ -189,7 +189,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-[var(--fg-2)] text-lg leading-relaxed">
-                  Learned that modernization is not a code problem. Architecture, team structure, language, incentives, delivery practice — they move together or they don't move. Helped build the app-modernization practice from zero to $250M ARR. Led 50+ solution architects.
+                  Modernization is not a code problem. Architecture, team structure, language, incentives, delivery practice — they move together or they don't move. Helped build the app-modernization practice from zero to $250M ARR. Led 50+ solution architects.
                 </p>
                 <p className="mt-4 text-[var(--fg-1)] font-medium">
                   Wall Street Journal coverage. 50K+ developers trained.
@@ -205,7 +205,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-[var(--fg-2)] text-lg leading-relaxed">
-                  Learned why good technology doesn't distribute itself. Led specialist and GTM work across modern apps, databases, early Gemini. Built a team of 10 senior specialists. Managed 300+ opportunities in 2023. Hit 162% of pipeline target.
+                  Good technology doesn't distribute itself. Led specialist and GTM work across modern apps, databases, early Gemini. Built a team of 10 senior specialists. Managed 300+ opportunities in 2023. Hit 162% of pipeline target.
                 </p>
                 <p className="mt-4 text-[var(--fg-1)] font-medium">
                   $250M+ revenue. Grew Application Transformation business 10x.
@@ -386,21 +386,9 @@ export default function HomePage() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20 px-6 md:px-12 lg:px-24 bg-[var(--bg-dark)] text-[var(--fg-on-dark-1)]">
+      <section id="contact" className="py-12 px-6 md:px-12 lg:px-24 bg-[var(--bg-dark)] text-[var(--fg-on-dark-1)]">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-8">
-            Bring me the workflow everyone calls too messy
-          </h2>
-          <div className="space-y-6 text-lg text-[var(--fg-on-dark-2)] leading-relaxed">
-            <p>
-              Skip the assistant demo. I want the workflow that keeps an operator awake because nobody can explain all its exception paths.
-            </p>
-            <p>
-              Fax machine? Twenty-year-old rule nobody documented? Seven-stage approval body? The spreadsheet everyone pretends isn't production? Good. I'll figure out why it survived.
-            </p>
-          </div>
-          
-          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-4 text-[var(--fg-on-dark-1)]">
+          <div className="flex flex-wrap gap-x-8 gap-y-4">
             <a 
               href="https://www.linkedin.com/in/rohitkelapure"
               target="_blank"
@@ -422,14 +410,6 @@ export default function HomePage() {
               className="hover:text-[var(--color-moss-300)] transition-colors"
             >
               GitHub
-            </a>
-            <a 
-              href="https://www.8090.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[var(--color-moss-300)] transition-colors"
-            >
-              8090.ai
             </a>
             <a 
               href="https://cloud.rohitkelapure.com"
