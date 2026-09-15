@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Rohit Kelapure — Builder who bridges deep tech and business',
-  description: 'Forward-deployed engineer and co-founder applying AI to hard enterprise problems in healthcare and life sciences. Based in Palo Alto, California.',
-  keywords: ['Rohit Kelapure', 'AI', 'Enterprise Software', 'Healthcare AI', '8090', 'Software Factory', 'Cloud Architecture'],
+  title: 'Rohit Kelapure — Forward-deployed product engineer',
+  description: 'I build software factories for work that cannot afford to be wrong: healthcare intake, regulated content, legacy rules, and enterprise workflows. Co-founder at 8090.',
+  keywords: ['Rohit Kelapure', 'AI', 'Enterprise Software', 'Healthcare AI', '8090', 'Software Factory', 'Applied AI'],
   authors: [{ name: 'Rohit Kelapure' }],
   openGraph: {
-    title: 'Rohit Kelapure — Builder who bridges deep tech and business',
-    description: 'Forward-deployed engineer and co-founder applying AI to hard enterprise problems in healthcare and life sciences.',
+    title: 'Rohit Kelapure — Forward-deployed product engineer',
+    description: 'I build software factories for work that cannot afford to be wrong. Co-founder at 8090.',
     url: 'https://rohitkelapure.com',
     siteName: 'Rohit Kelapure',
     locale: 'en_US',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rohit Kelapure — Builder who bridges deep tech and business',
-    description: 'Forward-deployed engineer and co-founder applying AI to hard enterprise problems in healthcare and life sciences.',
+    title: 'Rohit Kelapure — Forward-deployed product engineer',
+    description: 'I build software factories for work that cannot afford to be wrong. Co-founder at 8090.',
     creator: '@rkela',
   },
   robots: {
