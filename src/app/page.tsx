@@ -123,14 +123,14 @@ export default function HomePage() {
             Rohit Kelapure · Cofounder. Product Manager and first FDE @ 8090 · Palo Alto
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-8 tracking-tight">
-            Fax is still an API. COBOL still prices claims. The spreadsheet nobody admits is production still runs the company.
+            Fax is still an API. COBOL still prices claims. I work where the official process stops explaining itself.
           </h1>
           <div className="space-y-6 text-lg md:text-xl text-[var(--fg-on-dark-2)] leading-relaxed">
             <p>
               I sit with the people who know the exception paths, turn that into product intent agents can execute, and keep humans on the decisions that create liability.
             </p>
             <p>
-              Since 2003: IBM runtimes → Pivotal modernization → Google Cloud GTM → applied AI in production.
+              Cofounder. Product Manager and first FDE @ 8090. Since 2003: IBM runtimes → Pivotal modernization → Google Cloud GTM → applied AI in production.
             </p>
           </div>
         </div>
