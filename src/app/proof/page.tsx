@@ -35,7 +35,7 @@ export default function ProofPage() {
             For practitioners and recruiters who want to see past the thesis. This page covers how I build production systems, not what I believe about them.
           </p>
           <p className="mt-4 text-[var(--fg-on-dark-2)] leading-relaxed">
-            Multi-model honesty: Claude is my primary daily driver. I also run Codex for certain agent patterns and have production experience with Gemini through Google Cloud GTM work. The builds below are Claude-primary.
+            Multi-model honesty: Claude is my primary daily driver. I also run Codex for certain agent patterns and have production experience with Gemini through Google Cloud work. The builds below are Claude-primary unless noted.
           </p>
         </div>
       </section>
@@ -50,16 +50,16 @@ export default function ProofPage() {
           
           <div className="space-y-4 text-[var(--fg-2)] leading-relaxed">
             <p>
-              A medical-device manufacturer needed their 100+ engineers to query a multi-million-line monorepo through Claude Code without dumping context windows or missing critical files. I built a custom MCP server that maintains a semantic index of the codebase.
+              A medical-device manufacturer needed their 100+ engineers to query a large monorepo through Claude Code without dumping context windows or missing critical files. I built a custom MCP server that maintains a semantic index of the codebase.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">Architecture:</strong> The server exposes three tools — search by intent, retrieve file with dependencies, and trace call paths. Indexing runs nightly on their CI, with incremental updates for recent commits. Engineers query through natural language; the MCP returns ranked file sets with context windows that fit Claude's limits.
+              <strong className="text-[var(--fg-1)]">MCP surface:</strong> Three tools exposed — search by intent, retrieve file with dependencies, trace call paths. Engineers query through natural language; the MCP returns ranked file sets sized for Claude's context limits. Permissions enforce the regulated access controls already in place.
             </p>
             <p>
               <strong className="text-[var(--fg-1)]">Who consumes it:</strong> Development teams working on regulatory submissions, where missing a dependency means audit findings. The retrieval emphasis is precision — returning the wrong file costs more than returning nothing.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">Hard part:</strong> Retrieval quality degrades as the codebase and agent tooling both change. We tune ranking weights monthly. The index that worked in January produces worse results by April if you don't maintain it. Most teams underestimate this maintenance burden.
+              <strong className="text-[var(--fg-1)]">Hard part:</strong> Retrieval quality degrades as both codebase and agent tooling evolve. Ranking that worked three months ago produces worse results today if you don't maintain it. The maintenance burden is the real cost, not the initial build.
             </p>
           </div>
         </div>
@@ -75,10 +75,10 @@ export default function ProofPage() {
           
           <div className="space-y-4 text-[var(--fg-2)] leading-relaxed">
             <p>
-              Healthcare document intake is not "AI reads PDFs." It's sideways faxes, coffee-ring stains over patient IDs, handwritten amendments, and pages that arrive out of order. I built a multi-stage pipeline that handles this reality.
+              Healthcare document intake is not "AI reads PDFs." It's sideways faxes, coffee-ring stains over patient IDs, handwritten amendments, and pages that arrive out of order. I built a multi-stage pipeline on AWS that handles this reality.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">Architecture:</strong> Document models for classification and extraction, workflow rules that route by document type and urgency, patient-matching logic that handles partial identifiers, and escalation paths for low-confidence cases. Claude handles the language understanding; custom vision models handle the preprocessing disasters.
+              <strong className="text-[var(--fg-1)]">Architecture:</strong> Document models for classification and extraction, workflow rules that route by document type and urgency, patient-matching logic that handles partial identifiers, and escalation paths for low-confidence cases. Multi-model fallback chain — Claude handles the language understanding; vision models handle the preprocessing disasters.
             </p>
             <p>
               <strong className="text-[var(--fg-1)]">The human queue:</strong> What lands on someone's desk at 8 a.m. matters more than aggregate accuracy. The system prioritizes keeping that queue actionable — clear cases with clear reasons for escalation, not a pile of "AI wasn't sure."
@@ -90,32 +90,105 @@ export default function ProofPage() {
         </div>
       </section>
 
-      {/* Build 3: Executable PRD */}
+      {/* Build 3: EvalGPT */}
       <section className="py-16 px-6 md:px-12 lg:px-24 bg-[var(--bg-card)]">
         <div className="max-w-3xl mx-auto">
-          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Build narrative</p>
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Build narrative — public</p>
           <h2 className="text-2xl font-semibold text-[var(--fg-1)] mb-6">
-            Executable PRD → agent work orders → validation
+            EvalGPT: PRD judge with evidence-verified scoring
           </h2>
           
           <div className="space-y-4 text-[var(--fg-2)] leading-relaxed">
             <p>
-              Most teams lose traceability the moment an agent starts coding. The PRD says one thing, the implementation does another, and nobody notices until production. I built a system that maintains an audit chain from intent to deployment.
+              Most PRD review is vibes. "Looks good" or "needs more detail" without structure. I built an end-to-end PRD evaluation service that produces binary verdicts, deterministic scores, and agent-ready task graphs.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">Architecture:</strong> PRDs decompose into bounded work orders with explicit scope and constraints. Agents execute work orders, not vague requirements. Each work order produces code and test artifacts. A separate judge model validates that outputs satisfy the original intent. Rejections route back with specific failure reasons.
+              <strong className="text-[var(--fg-1)]">Architecture:</strong> React frontend → Fastify gateway on Cloud Run → private Python judge runtime. Split architecture keeps the scoring logic isolated and auditable. Privacy-preserving Google auth with HMAC-pseudonymous quotas; no PRD content persists after evaluation.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">The chain:</strong> Intent → design document → work orders → code commits → validation results → acceptance or rejection. At any point, I can answer "why does this code exist?" by tracing upstream.
+              <strong className="text-[var(--fg-1)]">Scoring:</strong> GO/REVISE/HOLD verdicts against C1–C12 rubric criteria. Evidence quotes are verified against source — the judge can't hallucinate support for a claim. Pinned judge bundles and model allowlists prevent drift between evaluations.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">Hard part:</strong> Making ambiguity visible before agents implement it at machine speed. A vague requirement that takes a human two weeks to misunderstand takes an agent two minutes. The work order decomposition is where most ambiguity surfaces — if I can't write a bounded work order, the intent isn't clear enough to execute.
+              <strong className="text-[var(--fg-1)]">Hard part:</strong> Making PASS/FAIL and fix plans trustworthy enough to feed downstream agents. If the judge is wrong, the agents implement the wrong thing at machine speed. The verification layer is the product.
+            </p>
+          </div>
+          <a 
+            href="https://github.com/kelapure/prd-as-a-service"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors font-medium"
+          >
+            View on GitHub →
+          </a>
+        </div>
+      </section>
+
+      {/* Build 4: Legacy comprehension / COBOL mining */}
+      <section className="py-16 px-6 md:px-12 lg:px-24">
+        <div className="max-w-3xl mx-auto">
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Build narrative</p>
+          <h2 className="text-2xl font-semibold text-[var(--fg-1)] mb-6">
+            Modernization as black-box reverse-engineering
+          </h2>
+          
+          <div className="space-y-4 text-[var(--fg-2)] leading-relaxed">
+            <p>
+              Reverse-engineering Medicare/CMS pricing applications — approximately 10 million lines of COBOL — before attempting any modernization. The first deliverable is not replacement code. It's a defensible map of business rules, dependencies, inputs, outputs, and exceptions.
+            </p>
+            <p>
+              <strong className="text-[var(--fg-1)]">What Claude does:</strong> Mining claim-processing rules into plain English with source traceability. Grounding extracted rules to the original COBOL so reviewers can verify. Building the test corpus that proves the extracted rules match black-box pricer behavior.
+            </p>
+            <p>
+              <strong className="text-[var(--fg-1)]">Related work:</strong> Semantic AST analysis for allocation-system migrations (Informix 4GL → Java class). The pattern is the same — you don't rewrite until you can defend the rules in a format humans and agents can verify.
+            </p>
+            <p>
+              <strong className="text-[var(--fg-1)]">Hard part:</strong> Models fail on legacy semantics. A partial AST is not a migration plan. Making those systems legible is the prerequisite — and it's exactly the kind of domain that stresses model capabilities and requires serious evaluation.
+            </p>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <a 
+              href="https://github.com/kelapure/ai-powered-modernization-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors font-medium"
+            >
+              AI-powered modernization analysis →
+            </a>
+            <a 
+              href="https://github.com/8090-inc/esrd-cy212-pricer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors font-medium"
+            >
+              ESRD pricer artifacts →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Decade of ownership */}
+      <section className="py-16 px-6 md:px-12 lg:px-24 bg-[var(--bg-card)]">
+        <div className="max-w-3xl mx-auto">
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Heritage</p>
+          <h2 className="text-2xl font-semibold text-[var(--fg-1)] mb-6">
+            A decade breaking black boxes — before LLMs
+          </h2>
+          
+          <div className="space-y-4 text-[var(--fg-2)] leading-relaxed">
+            <p>
+              The modernization work didn't start with Claude. At Pivotal, I built the <a href="https://github.com/kelapure/apptx-radar" target="_blank" rel="noopener noreferrer" className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)]">AppTx Radar</a> — an interactive assessment tool for replatform-vs-modernize decisions. Authored the surgery-pattern taxonomy (Strangler, ACL, seams, Mikado Method) that became standard practice.
+            </p>
+            <p>
+              Presented at <a href="https://www.infoq.com/profile/Rohit-Kelapure/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)]">InfoQ</a> and SpringOne on monolith decomposition with DDD, Event Storming, and observable health assessment. The <a href="https://youtu.be/Xm9zU-eGhyo" target="_blank" rel="noopener noreferrer" className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)]">360° Health Assessment</a> methodology is still in use.
+            </p>
+            <p className="text-[var(--fg-1)]">
+              The difference now: Claude can do in hours what took weeks of manual code archaeology. But the hard problems — rule extraction, behavior verification, domain expert validation — are the same. The craft transfers.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Craft note */}
+      {/* Operating note */}
       <section className="py-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl mx-auto">
           <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Operating note</p>
@@ -131,9 +204,60 @@ export default function ProofPage() {
               The MCP ecosystem is where I spend significant architecture time. Custom servers for code indexing, document pipelines, and customer-specific integrations. Skills for structured reasoning patterns that customers need repeatedly. The craft is knowing when a problem needs a custom tool versus better prompting.
             </p>
             <p>
-              Operating intensity is high — this is daily, multi-hour work across multiple production contexts, not occasional experimentation. But the intensity is evidence of operating mode, not skill proof. Logging hours doesn't make the output better; knowing when to switch from agent execution to manual inspection does.
+              Operating intensity is high — daily, multi-hour work across multiple production contexts. But the intensity is evidence of operating mode, not skill proof. Knowing when to switch from agent execution to manual inspection matters more than hours logged.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Demos */}
+      <section className="py-16 px-6 md:px-12 lg:px-24 bg-[var(--bg-card)]">
+        <div className="max-w-3xl mx-auto">
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Demos and secondary builds</p>
+          <h2 className="text-2xl font-semibold text-[var(--fg-1)] mb-6">
+            Other public artifacts
+          </h2>
+          
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-medium text-[var(--fg-1)] mb-2">Clinical diagnosis engine (demo)</h3>
+              <p className="text-[var(--fg-2)] text-sm mb-2">
+                Configurable YAML clinical-rules DSL with Claude vision extraction from handwritten rules. Real-time criteria evaluation. Labeled as demo — not a clinical product.
+              </p>
+              <a 
+                href="https://github.com/kelapure/clinical-diagnosis-engine"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors"
+              >
+                View on GitHub →
+              </a>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-[var(--fg-1)] mb-2">Consult automation agent</h3>
+              <p className="text-[var(--fg-2)] text-sm mb-2">
+                Claude Agent SDK pipeline: Gmail invite triage, profile-aware accept/decline, dual Computer Use stack for form fill. Personal ops automation demonstrating agentic loop ownership.
+              </p>
+              <a 
+                href="https://github.com/kelapure/consult"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors"
+              >
+                View on GitHub →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Methodology footer */}
+      <section className="py-12 px-6 md:px-12 lg:px-24">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-sm text-[var(--fg-3)]">
+            <strong className="text-[var(--fg-2)]">Methodology note:</strong> I maintain a local analytics dashboard over my Claude usage (Code, .ai, Desktop, API) — pure-stdlib Python, no network dependencies, engagement metrics with gap caps. The tool exists to understand my own patterns, not to produce vanity stats.
+          </p>
         </div>
       </section>
 

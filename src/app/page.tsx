@@ -113,18 +113,27 @@ const writingLinks = [
 const icBuilds = [
   {
     title: 'Code-index MCP for a regulated monorepo',
-    body: 'I built a custom MCP server that indexes a medical-device manufacturer\'s multi-million-line monorepo for 100+ engineers. Three tools: search by intent, retrieve file with dependencies, trace call paths. Indexing runs nightly on CI with incremental updates.',
-    hard: 'Retrieval quality degrades as the codebase and agent tooling both change. The index that worked in January produces worse results by April. Most teams underestimate this maintenance burden.',
+    body: 'Custom MCP server indexing a medical-device manufacturer\'s monorepo for 100+ engineers. Three tools exposed: search by intent, retrieve file with dependencies, trace call paths. Engineers query through natural language; the MCP returns ranked file sets sized for Claude\'s context limits.',
+    hard: 'Retrieval quality degrades as both codebase and agent tooling evolve. Ranking that worked three months ago misses files today. Maintenance is the real cost.',
+    link: null,
   },
   {
     title: 'Document-intelligence under bad inputs',
-    body: 'Healthcare document pipeline: classification models, workflow rules, patient matching with partial identifiers, escalation paths for low-confidence cases. What lands on someone\'s desk at 8 a.m. matters more than aggregate accuracy.',
-    hard: 'Confidence thresholds. Set them too low and you flood the human queue. Set them too high and you miss exceptions. We tune per document type and retrain when error patterns shift.',
+    body: 'Healthcare document pipeline on AWS: classification models, workflow rules, patient matching with partial identifiers, escalation for low-confidence cases. Multi-model fallback chain (Claude + vision preprocessing). What lands on the human queue at 8 a.m. matters more than aggregate accuracy.',
+    hard: 'Confidence thresholds. Too low floods the queue; too high misses exceptions. We tune per document type and retrain when error patterns shift.',
+    link: null,
   },
   {
-    title: 'Executable PRD → agent work orders → validation',
-    body: 'PRDs decompose into bounded work orders with explicit scope. Agents execute work orders, not vague requirements. A separate judge model validates outputs against original intent. Rejections route back with specific failure reasons.',
-    hard: 'Making ambiguity visible before agents implement it at machine speed. A vague requirement takes a human two weeks to misunderstand; it takes an agent two minutes.',
+    title: 'EvalGPT: PRD judge with evidence-verified scoring',
+    body: 'Public end-to-end PRD evaluation service. React frontend → Fastify gateway on Cloud Run → private Python judge runtime. Binary GO/REVISE/HOLD verdicts, deterministic readiness score, C1–C12 rubric criteria. Evidence quotes are verified against source; agent-ready task graphs when a PRD passes.',
+    hard: 'Making PASS/FAIL and fix plans trustworthy enough to feed downstream agents. Pinned judge bundles and model allowlists prevent drift.',
+    link: 'https://github.com/kelapure/prd-as-a-service',
+  },
+  {
+    title: 'Legacy comprehension as systems work',
+    body: 'Reverse-engineering Medicare/CMS pricing applications (~10M lines COBOL) before attempting modernization. The first deliverable is a defensible map of business rules, dependencies, and exceptions — not replacement code. Related work: semantic AST analysis for allocation-system migrations.',
+    hard: 'You don\'t rewrite until you can defend the rules. A partial AST is not a migration plan. Models fail on legacy semantics; making those systems legible is the prerequisite.',
+    link: 'https://github.com/kelapure/ai-powered-modernization-analysis',
   },
 ]
 
@@ -207,6 +216,16 @@ export default function HomePage() {
                 <p className="text-[var(--fg-1)] leading-relaxed">
                   <span className="font-medium">Hard part:</span> {build.hard}
                 </p>
+                {build.link && (
+                  <a 
+                    href={build.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 text-sm text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors"
+                  >
+                    View on GitHub →
+                  </a>
+                )}
               </article>
             ))}
           </div>
@@ -341,7 +360,7 @@ export default function HomePage() {
               At IBM, I learned to care about what happens inside a runtime: caching, contention, performance, failure, and production Java. 19 patent filings, including 10 grants.
             </p>
             <p>
-              At Pivotal, I learned that modernization is not primarily a code problem. Architecture, team structure, language, incentives, and delivery practice move together. Helped build the application-modernization practice from zero.
+              At Pivotal, I learned that modernization is not primarily a code problem. Architecture, team structure, language, incentives, and delivery practice move together. Helped build the application-modernization practice from zero. Authored the <a href="https://github.com/kelapure/apptx-radar" target="_blank" rel="noopener noreferrer" className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)]">AppTx Radar</a> and modernization surgery patterns; presented at SpringOne and <a href="https://www.infoq.com/profile/Rohit-Kelapure/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)]">InfoQ</a>.
             </p>
             <p>
               At Google Cloud, I learned why good technology doesn't distribute itself. Specialist and GTM work across modern applications, databases, and early Gemini adoption.
