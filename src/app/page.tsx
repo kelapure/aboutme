@@ -123,7 +123,7 @@ export default function HomePage() {
             Rohit Kelapure · Cofounder. Product Manager and first FDE @ 8090 · Palo Alto
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-8 tracking-tight">
-            Fax is still an API. COBOL still prices claims. I work where the official process stops explaining itself.
+            I work where the official process stops explaining itself.
           </h1>
           <div className="space-y-6 text-lg md:text-xl text-[var(--fg-on-dark-2)] leading-relaxed">
             <p>
