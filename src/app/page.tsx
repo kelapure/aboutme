@@ -62,7 +62,7 @@ const beliefs = [
     number: '06',
     title: 'Problems belong before wins',
     body: 'My status updates lead with the risk. Customers can handle bad news. What they can\'t handle is discovering the team edited reality to keep a slide green.',
-    receipt: 'Google Cloud, 300+ opportunities. Surprises killed more deals than bad news ever did.',
+    receipt: 'Enterprise deployments at scale. Surprises killed more deals than bad news ever did.',
   },
   {
     number: '07',
@@ -75,27 +75,56 @@ const beliefs = [
 const writingLinks = [
   {
     title: 'The AI autonomy spectrum of software development',
+    hook: 'Where agents replace you vs. where they wait for you',
     url: 'https://www.linkedin.com/posts/rohitkelapure_swipe-the-software-factory-autonomy-spectrum-activity-7467784447883419651-iNjH',
   },
   {
     title: 'Stop being the thing inside the loop',
+    hook: 'The maturity shift from executing to managing',
     url: 'https://www.linkedin.com/posts/rohitkelapure_stop-being-the-thing-inside-the-loop-evolve-activity-7470249083673255936-ZlJg',
   },
   {
     title: 'Writing PRDs that autonomous agents can actually use',
+    hook: 'Intent precision as executable specification',
     url: 'https://www.linkedin.com/pulse/writing-prds-autonomous-agents-can-actually-use-rohit-kelapure-e7ftc',
   },
   {
     title: 'Can AI agents build from your PRD?',
+    hook: 'The decomposition test for product intent',
     url: 'https://www.linkedin.com/pulse/can-ai-agents-build-from-your-prd-rohit-kelapure-fi6ic',
   },
   {
     title: 'Do you know the token cost of your backlog?',
+    hook: 'Scheduling agent work like compute',
     url: 'https://www.linkedin.com/posts/rohitkelapure_do-you-know-the-token-cost-of-your-backlog-activity-7483619418493775872-1sRy',
   },
   {
     title: 'From prompts to harnesses',
+    hook: 'The infrastructure that makes agents reliable',
     url: 'https://www.linkedin.com/posts/rohitkelapure_in-just-6-months-the-ai-llm-complex-has-activity-7495922517363019776-prAR',
+  },
+  {
+    title: 'North star metrics for an AI software factory',
+    hook: 'What to measure when agents generate the code',
+    url: 'https://rohitkelapure.substack.com/p/north-star-metrics-for-an-ai-software',
+  },
+]
+
+const icBuilds = [
+  {
+    title: 'Code-index MCP for a regulated monorepo',
+    body: 'I built a custom MCP server that indexes a medical-device manufacturer\'s multi-million-line monorepo for 100+ engineers. Three tools: search by intent, retrieve file with dependencies, trace call paths. Indexing runs nightly on CI with incremental updates.',
+    hard: 'Retrieval quality degrades as the codebase and agent tooling both change. The index that worked in January produces worse results by April. Most teams underestimate this maintenance burden.',
+  },
+  {
+    title: 'Document-intelligence under bad inputs',
+    body: 'Healthcare document pipeline: classification models, workflow rules, patient matching with partial identifiers, escalation paths for low-confidence cases. What lands on someone\'s desk at 8 a.m. matters more than aggregate accuracy.',
+    hard: 'Confidence thresholds. Set them too low and you flood the human queue. Set them too high and you miss exceptions. We tune per document type and retrain when error patterns shift.',
+  },
+  {
+    title: 'Executable PRD → agent work orders → validation',
+    body: 'PRDs decompose into bounded work orders with explicit scope. Agents execute work orders, not vague requirements. A separate judge model validates outputs against original intent. Rejections route back with specific failure reasons.',
+    hard: 'Making ambiguity visible before agents implement it at machine speed. A vague requirement takes a human two weeks to misunderstand; it takes an agent two minutes.',
   },
 ]
 
@@ -107,10 +136,10 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
           <span className="font-medium text-[var(--fg-on-dark-1)]">Rohit Kelapure</span>
           <div className="hidden md:flex gap-8 text-sm">
+            <Link href="#builds" className="text-[var(--fg-on-dark-2)] hover:text-[var(--fg-on-dark-1)] transition-colors">Builds</Link>
             <Link href="#field-work" className="text-[var(--fg-on-dark-2)] hover:text-[var(--fg-on-dark-1)] transition-colors">Field work</Link>
-            <Link href="#arc" className="text-[var(--fg-on-dark-2)] hover:text-[var(--fg-on-dark-1)] transition-colors">Career</Link>
             <Link href="#beliefs" className="text-[var(--fg-on-dark-2)] hover:text-[var(--fg-on-dark-1)] transition-colors">Beliefs</Link>
-            <Link href="#factory" className="text-[var(--fg-on-dark-2)] hover:text-[var(--fg-on-dark-1)] transition-colors">Software factory</Link>
+            <Link href="#factory" className="text-[var(--fg-on-dark-2)] hover:text-[var(--fg-on-dark-1)] transition-colors">Factory</Link>
             <Link href="#writing" className="text-[var(--fg-on-dark-2)] hover:text-[var(--fg-on-dark-1)] transition-colors">Writing</Link>
           </div>
         </div>
@@ -130,7 +159,7 @@ export default function HomePage() {
               I sit with the people who know the exception paths, turn that into product intent agents can execute, and keep humans on the decisions that create liability.
             </p>
             <p>
-              Cofounder. Product Manager and first FDE @ 8090. Since 2003: IBM runtimes → Pivotal modernization → Google Cloud GTM → applied AI in production.
+              Since 2003: IBM runtimes → Pivotal modernization → Google Cloud → applied AI in production.
             </p>
           </div>
         </div>
@@ -159,75 +188,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Career Arc */}
-      <section id="arc" className="py-20 px-6 md:px-12 lg:px-24">
+      {/* What I personally build - IC Proof Strip */}
+      <section id="builds" className="py-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-4xl mx-auto">
-          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-12">The arc</p>
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">IC proof</p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--fg-1)] mb-4">
+            What I personally build
+          </h2>
+          <p className="text-[var(--fg-2)] mb-12">
+            Architecture-level work on production systems. <Link href="/proof" className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors">Operating receipts on Claude (Code, API, MCP) — separate page.</Link>
+          </p>
           
           <div className="space-y-12">
-            {/* IBM */}
-            <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-8">
-              <div className="font-mono text-sm text-[var(--fg-3)]">
-                <span className="block text-[var(--accent)] font-semibold">IBM</span>
-                2003–2014
-              </div>
-              <div>
-                <p className="text-[var(--fg-2)] text-lg leading-relaxed">
-                  Eleven years inside a runtime: caching, contention, deadlocks, memory pressure, production Java at scale. Built WebSphere caching infrastructure for Fortune 100s. Set SPECjEnterprise world records. Wrote 300K+ lines that shipped to production.
+            {icBuilds.map((build, index) => (
+              <article key={index} className="border-l-2 border-[var(--color-moss-400)] pl-6 md:pl-8">
+                <h3 className="text-xl font-semibold text-[var(--fg-1)] mb-4">{build.title}</h3>
+                <p className="text-[var(--fg-2)] leading-relaxed mb-4">{build.body}</p>
+                <p className="text-[var(--fg-1)] leading-relaxed">
+                  <span className="font-medium">Hard part:</span> {build.hard}
                 </p>
-                <p className="mt-4 text-[var(--fg-1)] font-medium">
-                  19 patent filings, including 10 grants. Two Outstanding Technical Achievement Awards.
-                </p>
-              </div>
-            </div>
-
-            {/* Pivotal */}
-            <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-8">
-              <div className="font-mono text-sm text-[var(--fg-3)]">
-                <span className="block text-[var(--accent)] font-semibold">Pivotal</span>
-                2014–2020
-              </div>
-              <div>
-                <p className="text-[var(--fg-2)] text-lg leading-relaxed">
-                  Modernization is not a code problem. Architecture, team structure, language, incentives, delivery practice — they move together or they don't move. Helped build the app-modernization practice from zero to $250M ARR. Led 50+ solution architects.
-                </p>
-                <p className="mt-4 text-[var(--fg-1)] font-medium">
-                  Wall Street Journal coverage. 50K+ developers trained.
-                </p>
-              </div>
-            </div>
-
-            {/* Google */}
-            <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-8">
-              <div className="font-mono text-sm text-[var(--fg-3)]">
-                <span className="block text-[var(--accent)] font-semibold">Google Cloud</span>
-                2020–2024
-              </div>
-              <div>
-                <p className="text-[var(--fg-2)] text-lg leading-relaxed">
-                  Good technology doesn't distribute itself. Led specialist and GTM work across modern apps, databases, early Gemini. Built a team of 10 senior specialists. Managed 300+ opportunities in 2023. Hit 162% of pipeline target.
-                </p>
-                <p className="mt-4 text-[var(--fg-1)] font-medium">
-                  $250M+ revenue. Grew Application Transformation business 10x.
-                </p>
-              </div>
-            </div>
-
-            {/* 8090 */}
-            <div className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-8">
-              <div className="font-mono text-sm text-[var(--fg-3)]">
-                <span className="block text-[var(--accent)] font-semibold">8090</span>
-                2024–present
-              </div>
-              <div>
-                <p className="text-[var(--fg-2)] text-lg leading-relaxed">
-                  All the threads collapsed into one job. Sit with the customer. Shape the product. Build the system. Measure the failure. Explain the economics. Carry what we learn into the next version of the factory. Healthcare and life sciences — where the stakes are real.
-                </p>
-                <p className="mt-4 text-[var(--fg-1)] font-medium">
-                  8+ production enterprise projects. PRD-to-production in 3–6 months.
-                </p>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -347,6 +328,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Career Arc - Compressed */}
+      <section id="arc" className="py-20 px-6 md:px-12 lg:px-24 bg-[var(--bg-card)]">
+        <div className="max-w-3xl mx-auto">
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">The arc</p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--fg-1)] mb-8">
+            Why this became my work
+          </h2>
+          
+          <div className="space-y-6 text-[var(--fg-2)] text-lg leading-relaxed">
+            <p>
+              At IBM, I learned to care about what happens inside a runtime: caching, contention, performance, failure, and production Java. 19 patent filings, including 10 grants.
+            </p>
+            <p>
+              At Pivotal, I learned that modernization is not primarily a code problem. Architecture, team structure, language, incentives, and delivery practice move together. Helped build the application-modernization practice from zero.
+            </p>
+            <p>
+              At Google Cloud, I learned why good technology doesn't distribute itself. Specialist and GTM work across modern applications, databases, and early Gemini adoption.
+            </p>
+            <p>
+              At 8090, those threads collapsed into one job. Sit with the customer, shape the product, build the system, measure the failure, explain the economics, carry what we learn into the next version of the factory. Healthcare and life sciences — where the stakes are real.
+            </p>
+            <p className="text-[var(--fg-1)]">
+              The career arc is evidence. The work now is the point.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* DeepMind / Google secondary layer */}
+      <section className="py-20 px-6 md:px-12 lg:px-24">
+        <div className="max-w-3xl mx-auto">
+          <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Context for model teams</p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--fg-1)] mb-8">
+            What production evals look like from the customer side
+          </h2>
+          
+          <div className="space-y-6 text-[var(--fg-2)] text-lg leading-relaxed">
+            <p>
+              Google Cloud alumni. Early Gemini GTM before the public launch. I've seen what happens when models hit regulated text, legacy formats, and domain experts who know the edge cases.
+            </p>
+            <p>
+              The production evals I run — on fax pages, COBOL business rules, medical-affairs content — generate failure modes that matter for model improvement. Confidence calibration on messy inputs. Retrieval degradation over time. The gap between benchmark performance and real-world rejection rates.
+            </p>
+            <p className="text-[var(--fg-1)]">
+              These signals should reach model teams. I run multi-model adversarial review because no single model handles every domain well. The deployment context is where capability gaps surface.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Writing */}
       <section id="writing" className="py-20 px-6 md:px-12 lg:px-24 bg-[var(--bg-card)]">
         <div className="max-w-4xl mx-auto">
@@ -364,42 +395,51 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="block p-4 border border-[var(--border)] rounded-md hover:border-[var(--color-moss-400)] hover:bg-[var(--bg-page)] transition-colors group"
               >
-                <span className="text-[var(--fg-1)] group-hover:text-[var(--color-moss-500)] transition-colors">
+                <span className="text-[var(--fg-1)] group-hover:text-[var(--color-moss-500)] transition-colors font-medium">
                   {link.title} →
+                </span>
+                <span className="block text-sm text-[var(--fg-3)] mt-1">
+                  {link.hook}
                 </span>
               </a>
             ))}
           </div>
 
           <div className="mt-12 pt-8 border-t border-[var(--border)]">
-            <p className="text-[var(--fg-2)]">
-              <span className="font-medium text-[var(--fg-1)]">Book:</span> <em>Pragmatic Microservices</em> — a practical guide to building microservices at scale.
-            </p>
-            <p className="mt-4 text-[var(--fg-2)]">
-              <span className="font-medium text-[var(--fg-1)]">Speaking:</span> SpringOne Platform, JavaOne, IBM Impact, No Fluff Just Stuff, ÜberConf
-            </p>
-            <p className="mt-4 text-[var(--fg-3)]">
-              Archive: <a href="https://appm11n.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-link)] hover:underline">Application Modernization</a>, <a href="https://alllthingscloud.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-link)] hover:underline">Cloud Architecture</a>, <a href="https://wasdynacache.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-link)] hover:underline">Performance & Caching</a>
+            <p className="text-[var(--fg-3)]">
+              Archive: <a href="https://www.infoq.com/profile/Rohit-Kelapure/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-link)] hover:underline">InfoQ</a> · <a href="https://nofluffjuststuff.com/conference/speaker/rohit_kelapure" target="_blank" rel="noopener noreferrer" className="text-[var(--color-link)] hover:underline">SpringOne / NFJS</a> · <a href="https://cloud.rohitkelapure.com" target="_blank" rel="noopener noreferrer" className="text-[var(--color-link)] hover:underline">cloud.rohitkelapure.com</a>
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-12 px-6 md:px-12 lg:px-24 bg-[var(--bg-dark)] text-[var(--fg-on-dark-1)]">
+      {/* Soft Hiring CTA */}
+      <section id="contact" className="py-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl mx-auto">
-          <div className="flex flex-wrap gap-x-8 gap-y-4">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--fg-1)] mb-6">
+            Work that has real liability
+          </h2>
+          <div className="space-y-6 text-[var(--fg-2)] text-lg leading-relaxed">
+            <p>
+              I take on workflows whose exception paths live in people's heads — regulated content, legacy rules, intake that fails in public.
+            </p>
+            <p>
+              I also talk with Applied AI and Forward Deployed teams at frontier labs when the work is production systems with real liability.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
             <a 
               href="https://www.linkedin.com/in/rohitkelapure"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--color-moss-300)] transition-colors"
+              className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors font-medium"
             >
               LinkedIn
             </a>
             <a 
               href="mailto:kelapure@gmail.com"
-              className="hover:text-[var(--color-moss-300)] transition-colors"
+              className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors font-medium"
             >
               kelapure@gmail.com
             </a>
@@ -407,7 +447,7 @@ export default function HomePage() {
               href="https://github.com/kelapure"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--color-moss-300)] transition-colors"
+              className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors font-medium"
             >
               GitHub
             </a>
@@ -415,7 +455,7 @@ export default function HomePage() {
               href="https://cloud.rohitkelapure.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[var(--color-moss-300)] transition-colors"
+              className="text-[var(--color-moss-500)] hover:text-[var(--color-moss-600)] transition-colors font-medium"
             >
               Blog
             </a>

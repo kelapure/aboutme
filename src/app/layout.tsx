@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Rohit Kelapure — Cofounder. Product Manager and first FDE @ 8090',
-  description: 'I work where the official process stops explaining itself. I sit with the people who know the exception paths and turn that into product intent agents can execute.',
-  keywords: ['Rohit Kelapure', 'AI', 'Enterprise Software', 'Healthcare AI', '8090', 'Software Factory', 'Applied AI'],
+  title: 'Rohit Kelapure — Forward-Deployed Product Engineer',
+  description: 'Applied AI in production. I build software factories for regulated workflows — healthcare intake, legacy rules, enterprise systems with real liability. MCP, agents, evals, and the human gates that make them safe.',
+  keywords: ['Rohit Kelapure', 'Applied AI', 'Forward Deployed Engineer', 'MCP', 'Claude', 'Healthcare AI', 'Software Factory', 'Production AI Systems'],
   authors: [{ name: 'Rohit Kelapure' }],
   openGraph: {
-    title: 'Rohit Kelapure — Cofounder. Product Manager and first FDE @ 8090',
-    description: 'I work where the official process stops explaining itself. I sit with the people who know the exception paths and turn that into product intent agents can execute.',
+    title: 'Rohit Kelapure — Forward-Deployed Product Engineer',
+    description: 'Applied AI in production. I build software factories for regulated workflows — healthcare intake, legacy rules, enterprise systems with real liability.',
     url: 'https://rohitkelapure.com',
     siteName: 'Rohit Kelapure',
     locale: 'en_US',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rohit Kelapure — Cofounder. Product Manager and first FDE @ 8090',
-    description: 'I work where the official process stops explaining itself. I sit with the people who know the exception paths and turn that into product intent agents can execute.',
+    title: 'Rohit Kelapure — Forward-Deployed Product Engineer',
+    description: 'Applied AI in production. I build software factories for regulated workflows — healthcare intake, legacy rules, enterprise systems with real liability.',
     creator: '@rkela',
   },
   robots: {
