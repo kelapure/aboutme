@@ -130,9 +130,9 @@ const icBuilds = [
     link: 'https://github.com/kelapure/prd-as-a-service',
   },
   {
-    title: 'Legacy comprehension as systems work',
-    body: 'Reverse-engineering Medicare/CMS pricing applications (~10M lines COBOL) before attempting modernization. The first deliverable is a defensible map of business rules, dependencies, and exceptions — not replacement code. Related work: semantic AST analysis for allocation-system migrations.',
-    hard: 'You don\'t rewrite until you can defend the rules. A partial AST is not a migration plan. Models fail on legacy semantics; making those systems legible is the prerequisite.',
+    title: 'CMS claim-rule mining from COBOL with Claude',
+    body: 'Reverse-engineered Medicare pricing COBOL (~10 million lines) into a defensible English claim-rule map. The deliverable is business rules with source traceability — not replacement code. Claude mines the rules; the test corpus proves extracted rules match black-box pricer behavior.',
+    hard: 'Models fail on legacy semantics. You don\'t rewrite until you can defend the rules in a format humans and agents can verify. A partial AST is not a migration plan.',
     link: 'https://github.com/kelapure/ai-powered-modernization-analysis',
   },
 ]

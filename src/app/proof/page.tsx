@@ -123,26 +123,26 @@ export default function ProofPage() {
         </div>
       </section>
 
-      {/* Build 4: Legacy comprehension / COBOL mining */}
+      {/* Build 4: CMS COBOL claim-rule mining */}
       <section className="py-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl mx-auto">
           <p className="font-mono text-xs tracking-widest uppercase text-[var(--fg-eyebrow)] mb-4">Build narrative</p>
           <h2 className="text-2xl font-semibold text-[var(--fg-1)] mb-6">
-            Modernization as black-box reverse-engineering
+            CMS claim-rule mining from COBOL with Claude
           </h2>
           
           <div className="space-y-4 text-[var(--fg-2)] leading-relaxed">
             <p>
-              Reverse-engineering Medicare/CMS pricing applications — approximately 10 million lines of COBOL — before attempting any modernization. The first deliverable is not replacement code. It's a defensible map of business rules, dependencies, inputs, outputs, and exceptions.
+              Reverse-engineered Medicare pricing COBOL — approximately 10 million lines across multiple CMS pricer applications — into a defensible English claim-rule map. The deliverable is business rules with source traceability, not replacement code.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">What Claude does:</strong> Mining claim-processing rules into plain English with source traceability. Grounding extracted rules to the original COBOL so reviewers can verify. Building the test corpus that proves the extracted rules match black-box pricer behavior.
+              <strong className="text-[var(--fg-1)]">What Claude does:</strong> Mining claim-processing rules into plain English. Grounding extracted rules to original COBOL source so reviewers can verify. Building the test corpus that proves extracted rules match black-box pricer behavior. This is repo-scale legacy comprehension with Claude as the core engine.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">Related work:</strong> Semantic AST analysis for allocation-system migrations (Informix 4GL → Java class). The pattern is the same — you don't rewrite until you can defend the rules in a format humans and agents can verify.
+              <strong className="text-[var(--fg-1)]">Related work:</strong> Semantic AST analysis for allocation-system migrations (Informix 4GL → Java). The pattern is the same — you don't rewrite until you can defend the rules in a format humans and agents can verify.
             </p>
             <p>
-              <strong className="text-[var(--fg-1)]">Hard part:</strong> Models fail on legacy semantics. A partial AST is not a migration plan. Making those systems legible is the prerequisite — and it's exactly the kind of domain that stresses model capabilities and requires serious evaluation.
+              <strong className="text-[var(--fg-1)]">Hard part:</strong> Models fail on legacy semantics. A partial AST is not a migration plan. Making those systems legible is the prerequisite — and it's exactly the kind of hard domain that stresses model capabilities and requires serious evaluation.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-4">
