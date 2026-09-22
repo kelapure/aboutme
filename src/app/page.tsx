@@ -167,9 +167,6 @@ export default function HomePage() {
             <p>
               I sit with the people who know the exception paths, turn that into product intent agents can execute, and keep humans on the decisions that create liability.
             </p>
-            <p>
-              Since 2003: IBM runtimes → Pivotal modernization → Google Cloud → applied AI in production.
-            </p>
           </div>
         </div>
       </section>
@@ -367,9 +364,6 @@ export default function HomePage() {
             </p>
             <p>
               At 8090, those threads collapsed into one job. Sit with the customer, shape the product, build the system, measure the failure, explain the economics, carry what we learn into the next version of the factory. Healthcare and life sciences — where the stakes are real.
-            </p>
-            <p className="text-[var(--fg-1)]">
-              The career arc is evidence. The work now is the point.
             </p>
           </div>
         </div>
